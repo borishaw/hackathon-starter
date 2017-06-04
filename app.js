@@ -37,7 +37,7 @@ const contactController = require('./controllers/contact');
 const clientReqController = require ('./controllers/client_req');
 const searchController = require('./controllers/search');
 const clientUploadAndTagController = require('./controllers/upload_and_taging');
-const orderController = require('./controllers/orders');
+// const orderController = require('./controllers/orders');
 
 
 /**
@@ -132,7 +132,7 @@ app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
-app.get('/order', orderController.getOrder);
+// app.get('/order', orderController.getOrder);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
 app.get('/search/lawyers', searchController.findLawyers);
@@ -147,7 +147,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.post('/account/client/request',clientReqController.postClientReq);
 app.get('/account/client/request',clientReqController.getClientReq);
 app.get('/client/request/upload',clientUploadAndTagController.getUploadAndTag);
-// app.post('/account/client/request/upload',clientUploadAndTagController.getUploadAndTag);
+app.post('/client/request/upload',clientUploadAndTagController.postUploadAndTag);
 
 /**
  * API examples routes.
